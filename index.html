@@ -20,465 +20,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+     <!-- bootstrap icon cdn -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
     <link rel="shortcut icon" href="images/favicon.jpg" type="image/jpg">
     <title>The Band</title>
 
-    <style>
-        
-    html{
-      scroll-behavior: smooth;
-    }
-    /* body{
-      font-family: "mr-eaves-xl-modern", sans-serif;
-      font-size: 1.3rem; 
-      margin-top: 86px;
-    } */
+    <link rel="stylesheet" href="style.css">
 
-    h1,h2,h3,h4{
-      font-family: 'Allura', cursive;
-      color: red;
-      /* font-weight: bold; */
-    }
-    h1{
-      font-size: 15vmin;
-    }
-
-    :root{
-            --bg-color:hsl(49 37% 94%)
-        }
-        .box{
-            margin: 0;
-            font-family: "Source Sans Prp" sans-serif;
-            min-height: 100vh;
-            display: grid;
-            place-content: center;
-            text-align: center;
-            background: var(--bg-color);
-        }
-        .box .typehead{
-          position: relative;
-          font-family: 'Allura', cursive;
-          color: red;
-          font-size: 1em;
-          position: fixed;
-          right:2% ;bottom: 2%;
-          z-index: 600;
-        }
-        .box .typehead::before{
-          content: "";
-          position: absolute;
-          background-color: red;
-          right: -36%;
-          width: 1px;
-          height: 15px;top: 4px;
-          transform: rotate(90deg);
-          opacity: 0.8;
-        }
-        @media all and (max-width:425px) {
-          .box .typehead{
-            right: 5%;
-          }
-        }
-  .planet{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(-5rem);
-    animation: planet 2s ease calc(5s + 1s) forwards;
-    transition: 0.5s;
-    -webkit-box-reflect: below linear-gradient(#0001,#0002);
- }
- @keyframes planet {
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
- }
- .earth{
-    width: 100px;height: 100px;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKze4S3ObrHpQUBbDze-WQmcQjgCkEAZ1N8wWiuAaBgFx7yAMd7LDC6wIq--hI0FBZgso&usqp=CAU);
-    border-radius: 50%;
-    background-size: cover;
-    box-shadow: inset 0 0 5px black, 0 0 2px rgb(241, 3, 3);
-    animation: earth 5s linear infinite;
-} 
-@keyframes earth {
-    0%{
-        background-position: 0%;
-    }
-    100%{
-        background-position: 200%;
-    }
-}
-        .box .name{
-           font-size: 2em;
-           font-weight: 600;
-           color: black;
-           position: relative;
-           font-family: "Source Sans Prp" monospace;
-        }
-        .box .name::before,
-        .box .name::after{
-            content: "";
-            position:absolute;
-            /* inset:0 0 0 0; */
-            top: 0; bottom: 0; left: 0; right: 0;
-        }
-        .box .name::before{
-            background: var(--bg-color);
-            animation: typewriter 5s steps(25) 0.5s forwards;
-        }
-        .box .name::after{
-            width:0.125em;
-            background:black;
-            animation: typewriter 5s steps(25) 0.5s forwards,
-            blink 750ms steps(25) forwards infinite;
-        }
-        .box .welcome{
-            color: black;
-            font-size: 2rem;
-            font-weight: 400;
-            opacity: 0;
-            transform: translateY(2rem);
-            animation: fadeInUp 2s ease calc(6s + 0.5s) forwards;
-        }
-        .box h4{
-          opacity: 0;
-          transform: translateY(3rem);
-          animation: title 2s ease calc(6.5s + 0.5s) forwards;
-          transition: 0.5s;
-        }
-        .box .name{
-            animation: disappear 1s ease calc(5s + 0.5s) forwards;
-        }
-        @keyframes typewriter {
-            to{
-               left: 100%;
-            }
-        }
-        @keyframes blink {
-            to{
-               background: transparent;
-            }
-        }
-         @keyframes fadeInUp {
-            to{
-              opacity: 1;
-              transform: translateY(-2em);
-            }
-        }
-        @keyframes disappear {
-            to{
-                opacity: 0;
-            }
-        }
-        @keyframes title {
-            to{
-              opacity: 1;
-              transform: translateY(-1.7em);
-            }
-        }
-        @media all and (max-width:360px) {
-            .box .name{
-           font-size: 1.5rem;
-           padding: 0 10px;
-        }
-        .box .welcome{
-            font-size: 1.4rem;
-            font-weight: 400;
-        }
-        } 
-
-        /* #up{
-         
-          transform: translateY(100vh);
-          animation:toUp 2s ease calc(6s + 2s) forwards;
-        }
-        @keyframes toUp{
-          from{
-             transform: translateY(100vh);
-          }
-          to{
-             transform: translateY(0vh);
-          }
-        }  */
-
-      .navbar{
-        z-index: 550;
-        position: sticky;
-        top:0;  
-        }
-    .navbar .navbar-brand{
-      font-family: 'Allura', cursive;
-      color: red;
-      font-size: 2.5rem;
-    }
-    .navbar .bi{
-      color: red;
-      margin-left: 0.1em;
-      animation: logo 1s linear infinite;
-    }
-    @keyframes logo {
-      to{
-        transform: rotate(360deg);
-      }
-    }
-    .navbar .nav-item{
-      margin-left: 2em;
-      font-size: 1.2rem;
-    }
-
-    @media all and (max-width:768px) {
-      .navbar .navbar-brand{
-        font-size: 1.8rem;
-      }
-      .navbar .nav-item{
-        margin-left: 0;
-        font-size: 16px;
-    }
-    .navbar .navbar-toggler{
-      font-size: 15px;
-      padding:0.2rem 0.6rem;
-    }
-    .navbar button.navbar-toggler:focus{
-      box-shadow: 0 0 0 0.05rem;
-     border: 0.01px solid aqua;
-    }
-    }
-
-    .hero{
-    background: url(https://images.unsplash.com/photo-1521547418549-6a31aad7c177?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJhbmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-     /* background-repeat: no-repeat; */
-     background-size: cover;
-     padding-top: 20vh;
-     padding-bottom: 27vh;
-    }
-
-    .social{
-    position:fixed;
-    top: 50%;
-    right: 2%;
-    z-index: 549;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 550;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing:antialiased;
-}
-.social ul{
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-.social ul li{
-    list-style: none;
-    margin: 5px 0;
-}
-.social i{
-    font-size: 14px;
-}
-.social ul li a{
-    display: block;
-    width: 30px;
-    height: 30px;
-    line-height: 14px;
-    color: red;
-    text-align: center;
-}
-.social ul li a:focus-within{
-  color: red;
-}
-    .carousel-item{
-          height: 32rem;
-        }
-        .carousel-caption :is(h5,p){
-          color: rgba(255, 255, 255,0.8);
-        }
-        .about :is(p){
-          color: rgba(255, 255, 255,0.8);
-        }
-
-    .button:hover{
-      background: white;
-      color: black;
-      font-weight: bold;
-    }
-    .button{
-      background: red;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-    .about-title{
-      background: url(https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fG1hbiUyMHdpdGglMjBiYW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-      background-position: center;
-      background-size: cover;
-      min-height: 45vw;
-    }
-    .about-text{
-      padding-top: 5vh;
-      padding-bottom: 10vh;
-    }
-    .card-text{
-      font-size: 18px;
-      color: gray;
-    }
-    .parallax{
-      background-image: url(https://images.unsplash.com/uploads/1411160110892ab555b6f/80b0d25e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG11c2ljJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-      object-fit: cover;
-    }
-    .band-member{
-      margin-bottom: 0.5em;
-      position:relative;
-      top: -3em;
-      z-index: 100;
-    }
-   .parallax-home{
-     height: 30vmax;
-     background: url(https://images.unsplash.com/photo-1499415479124-43c32433a620?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-attachment: fixed;
-     background-position: center;
-     transition: all 0.5s;
-   }
-   @media all and (max-width:425px) {
-     .parallax-home{
-       background-size: initial;
-       object-fit: cover;
-     }
-   }
-
-   .music{
-    margin-top: 1em;
-    margin-bottom: 2em;
-   }
-   .music-container{
-     background: black;
-     box-shadow: 6px 6px 15px 0 rgba(0, 0, 0,0.5);
-     padding-top: 7vh;
-     padding-bottom: 7vh;
-   }
-   .music-title{
-     margin-bottom: 0.5em;
-   }
-   .music .btn:hover{
-    border: none;
-    opacity: 0.9;
-   }
-   .shows{
-     font-size: 0.9em;
-   }
-   @media all and (max-width:425px) {
-    .shows .card-img{
-      height: 350px;
-      object-fit: cover;
-    }
-   }
-  .shows :is(h3){
-    font-family: sans-serif;
-    color: white;
-   }
-   .show-info{
-     display: flex;
-     flex-direction: column;
-   }
-   .show-info > *{
-    margin-bottom: 0;
-   }
-   .date{
-     font-weight: bold;
-     margin-top: 1.25em;
-   }
-   .date::before{
-     content: "\f073";
-     display: inline-block;
-     font-family:"Font Awesome 5 Free";
-     margin-right: 0.5em;
-   }
-   .price{
-     font-weight: bold;
-   }
-   .price .small{
-     font-weight: lighter;
-   }
-   .price::before{
-     content: "\f3ff";
-     display: inline-block;
-     font-family:"Font Awesome 5 Free";
-     margin-right: 0.5em;
-     transform: rotate(-45deg);
-     margin-top: 0.1em;
-     font-size: 0.8em;
-   }
-   .show-info .btn3{
-     background: red;
-     color: white;
-     border: none;
-   }
-   .btn:hover{
-     opacity: 0.85;
-     border: none;
-     box-shadow: none;
-   }
-   .btn:focus{
-     border: none;
-     box-shadow: none;
-   }
-   .form-control:focus{
-     border: none;
-     box-shadow: none;
-   }
-
-    footer a{
-      color: rgba(255,255,255,.55);
-    }
-    footer a:hover{
-      color: rgba(255, 255, 255, 0.8);
-    }
-    .footer-title{
-      color: red;
-      font-family: 'Allura', cursive;
-    }
-
-    /* back to top */
-    .top{
-      margin-top: -40px;
-      display: grid;
-      justify-content: end;
-      position: relative;
-    }
-    .top a i{
-      color: red;
-      font-size: 2em;
-      font-weight: 700;
-      bottom: 15px;
-      z-index: 570;
-    }
-     .top a i:hover{
-      color:white;
-    }
-    .top .btn{
-      border: none;
-      padding: 0;
-    }
-    @media all and (max-width:425px) {
-      .top{
-        display: grid;
-        justify-content:center;
-        font-size: 0.8em;
-      }
-    }
-
-    </style>
+    <!-- <script>
+      $(function(){
+      $('.menu-toggle').click(function() {
+      $('.site-nav').toggleClass('site-nav--open', 500);
+      $(this).toggleClass('open');
+      
+      })
+  });
+    </script> -->
 
   </head>
   <body class="text-white" style="background: rgba(0, 0, 0,0.8);">
 <div id="up">
-    <section>
+    <!-- <section>
       <div class="box">
         <div class="planet">
           <div class="loader"><span></span></div>
@@ -489,9 +52,9 @@
         <p class="welcome"> welcome to my website</p>
         <h4 class="fs-1 fw-bold">The Band</h4>
       </div>
-    </section>
+    </section> -->
   
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-md">
           <a class="navbar-brand" href="#">The Band <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-disc-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-6 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM4 8a4 4 0 0 1 4-4 .5.5 0 0 0 0-1 5 5 0 0 0-5 5 .5.5 0 0 0 1 0zm9 0a.5.5 0 1 0-1 0 4 4 0 0 1-4 4 .5.5 0 0 0 0 1 5 5 0 0 0 5-5z"/>
@@ -516,8 +79,32 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> -->
 
+      <!--  nav bar start -->
+
+      <header>
+
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+
+        <div class="ls">
+          <h1 class="logo">The Band <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-disc-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-6 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM4 8a4 4 0 0 1 4-4 .5.5 0 0 0 0-1 5 5 0 0 0-5 5 .5.5 0 0 0 1 0zm9 0a.5.5 0 1 0-1 0 4 4 0 0 1-4 4 .5.5 0 0 0 0 1 5 5 0 0 0 5-5z"/>
+          </svg></h1>
+          <a class="btn1" href="content/index.html">sign-in</a>
+        </div>
+          
+            <ul class="menu">
+              <li class="item"><a href="#">Home</a></li>
+              <li class="item"><a href="content/about.html" target="_blank">About</a></li>
+              <li class="item"><a href="content/our-music.html" target="_blank">Our music</a></li>
+              <li class="item"><a href="content/coming-soon.html" target="_blank">Up coming shows</a></li>
+            </ul>
+      
+      </header>
+
+      <!-- nav bar end -->
       <section class="hero text-center">
           <div class="container">
                 <h1 class="fw-bold display-1" name="top">We are rock</h1>
@@ -734,9 +321,13 @@
           </div>
           <div class="col-sm-6">
             <h2 class="text-light text-center display-3">Contact-Us</h2>
+            <!-- <svg viewBox="0 0 20 20" width="1rem">
+              <path d="M0 0 L10 10 L0 20"></path>
+            </svg> -->
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingInput" placeholder="Name">
-              <label class="text-danger" for="floatingInput">Name</label>
+              <label class="text-danger" for="floatingInput">Name
+              </label>
             </div>
             <div class="form-floating mb-3">
               <input type="Email" class="form-control" id="floatingPassword" placeholder="Email">
