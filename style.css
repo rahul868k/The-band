@@ -1,6 +1,7 @@
       
     html{
         scroll-behavior: smooth;
+        cursor: pointer;
       }
       /* body{
         font-family: "mr-eaves-xl-modern", sans-serif;
@@ -16,7 +17,6 @@
       h1{
         font-size: 15vmin;
       }
-  
       /* == animation start */
 
       :root{
@@ -30,6 +30,7 @@
               place-content: center;
               text-align: center;
               background: var(--bg-color);
+              transition: 3s ease;
           }
           .box .typehead{
             position: relative;
@@ -165,7 +166,25 @@
               font-weight: 400;
           }
           } 
-
+          /* cursor animation */
+          .cursor{
+            pointer-events:none;
+            height: 50px;
+            width: 50px;
+            background: #e7c82f;
+            opacity: 0.8;
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+            transition: 0.5s ease-out;
+            transform: scale(0.6);
+            z-index: 99999999;
+            mix-blend-mode: difference;
+        }
+        div:hover ~ div.cursor{
+          transform: scale(2);
+          background-color: tomato;
+        }
           /* == animation end == */
   
           /* #up{
