@@ -308,6 +308,7 @@ header li{
         display: block;
         margin-top: 10px;
         float: right;
+        transition: transform 0.5s ease;
       }
       header .menu-icon .nav-icon{
         cursor: pointer;
@@ -317,6 +318,10 @@ header li{
         width: 18px;
         position: relative;
         transition: background 0.2s ease-out;
+      }
+      header .menu-icon:hover,
+      header .menu-icon:focus{
+        transform: rotate(360deg);
       }
       .nav-icon::before,.nav-icon::after{
         content: "";
