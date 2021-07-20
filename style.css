@@ -1,7 +1,6 @@
       
     html{
         scroll-behavior: smooth;
-        cursor: pointer;
       }
       /* body{
         font-family: "mr-eaves-xl-modern", sans-serif;
@@ -367,6 +366,10 @@ header li{
       }
 
       @media all and (min-width:768px) {
+
+        body,html{
+          cursor: pointer;
+        }
         header .menu-icon .nav-icon{
           /* display: none; */
         }
