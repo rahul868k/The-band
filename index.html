@@ -67,6 +67,15 @@
               //   $(window).scrollTop(0)
               // })
 
+              // change nav on scroll
+              var zero=0;
+              $(document).ready(function(){
+                  $(window).on('scroll', function(){
+                      $('header').toggleClass('white', $(window).scrollTop() > zero);
+                      $('header').toggleClass('red', $(window).scrollTop() < zero);
+                      zero =$(window).scrollTop();
+                  });
+              })
 
     </script>
 

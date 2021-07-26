@@ -259,6 +259,14 @@ header {
     z-index: 550;
     position: sticky;
     top:0; 
+    transition:all 0.8s ease;
+}
+header.white{
+  background: whitesmoke;
+}
+header.red{
+  /* background: rgb(241, 45, 10); */
+  background: wheat;
 }
 header ul{
     position: absolute;
