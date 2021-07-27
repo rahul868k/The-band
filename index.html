@@ -86,7 +86,7 @@
     <div class="cursor"></div>
 
 <div id="up">
-    <section>
+    <!-- <section>
       <div class="box">
         <div class="planet">
           <div class="loader"><span></span></div>
@@ -97,7 +97,7 @@
         <p class="welcome"> welcome to my website</p>
         <h4 class="fs-1 fw-bold">The Band</h4>
       </div>
-    </section>
+    </section> -->
   
     <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-md">
@@ -447,29 +447,11 @@
         </button>
       </div>
 
+      <div id="progressbar"></div>
+      <div id="progressbar-hoz"></div>
     </footer>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -512,6 +494,25 @@
                 $('.cursor').css('transform', 'scale(0.6)');
             })
         })
+
+    // custom scroll bar vertical
+
+    $(window).scroll(function(){
+      var scroll = $(window).scrollTop(),
+      dh = $(document).height(),
+      wh = $(window).height();
+      scrollPercent = (scroll / (dh-wh)) * 100;
+      $('#progressbar').css('height',scrollPercent + '%');
+    });
+
+    // custom scroll bar horizontal
+    $(window).scroll(function(){
+      var scroll = $(window).scrollTop(),
+      dh = $(document).height(),
+      wh = $(window).height();
+      scrollPercent = (scroll / (dh-wh)) * 100;
+      $('#progressbar-hoz').css('width',scrollPercent + '%');
+    })
   </script>
 
   
